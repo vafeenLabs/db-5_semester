@@ -38,29 +38,29 @@ CREATE TABLE provider (
 
 CREATE TABLE car (
     number VARCHAR(6) PRIMARY KEY,
-    region VARCHAR (3) NOT NULL,
+    region VARCHAR(3) NOT NULL,
     year VARCHAR(4) NOT NULL,
     category VARCHAR(2) NOT NULL,
     model TEXT NOT NULL,
     body_type TEXT NOT NULL,
     mark TEXT NOT NULL,
-    id_person SERIAL REFERENCES person(id_person)
+    id_person INTEGER REFERENCES person(id_person)
 );
 
 CREATE TABLE master (
     id_master SERIAL PRIMARY KEY,
-    data_of_birth DATE,
+    date_of_birth DATE,
     specialization TEXT,
-    expenence VARCHAR(2) NOT NULL,
-    the_work_rate INTEGER,
-    id_person SERIAL REFERENCES person(id_person)
+    experience VARCHAR(2) NOT NULL,
+    work_rate INTEGER,
+    id_person INTEGER REFERENCES person(id_person)
 );
 
 CREATE TABLE order_ (
     id_order SERIAL PRIMARY KEY,
     date_of_receipt DATE,
-    planned_comlection DATE,
-    actual_complection DATE,
+    planned_completion DATE,
+    actual_completion DATE,
     sum_of_cost INTEGER CHECK (sum_of_cost >= 0),
     comment TEXT,
     client BOOL,
@@ -69,7 +69,7 @@ CREATE TABLE order_ (
 );
 
 CREATE TABLE order_malfunction (
-    id_order INTEGER REFERENCES master(id_master),
+    id_order INTEGER REFERENCES order_(id_order),
     id_malfunction INTEGER REFERENCES malfunction(id_malfunction)
 );
 
@@ -79,8 +79,8 @@ ADD
     CONSTRAINT order_malfunction_PK PRIMARY KEY (id_order, id_malfunction);
 
 CREATE TABLE order_of_spare_part (
-    id_order SERIAL REFERENCES master(id_master),
-    code SERIAL REFERENCES spare_part(code),
+    id_order INTEGER REFERENCES order_(id_order),
+    code INTEGER REFERENCES spare_part(code),
     count INTEGER CHECK (count > 0)
 );
 
@@ -90,8 +90,8 @@ ADD
     CONSTRAINT order_of_spare_part_PK PRIMARY KEY (id_order, code);
 
 CREATE TABLE order_work (
-    id_order SERIAL REFERENCES master(id_master),
-    id_work SERIAL REFERENCES spare_part(code)
+    id_order INTEGER REFERENCES order_(id_order),
+    id_work INTEGER REFERENCES work(id_work)
 );
 
 ALTER TABLE

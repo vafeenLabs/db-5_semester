@@ -1,22 +1,17 @@
 --Запрос39 :Выбрать все данные о заказе с самым продолжительным сроком исполнения .
 
-
-
--- Вставка данных для таблицы person
 INSERT INTO person (id_person, name, surname, patronymic, phone)
 VALUES
 (1, 'Иван', 'Иванов', 'Иванович', '12345678901'),
 (2, 'Петр', 'Петров', 'Петрович', '23456789012'),
 (3, 'Сергей', 'Сергеев', 'Сергеевич', '34567890123');
 
--- Вставка данных для таблицы car
 INSERT INTO car (number, region, year, category, model, body_type, mark, id_person)
 VALUES
 ('A123BC', '77', 2010, 'легковой', 'ModelX', 'Седан', 'Toyota', 1),
 ('B456CD', '78', 2015, 'легковой', 'ModelY', 'Кроссовер', 'Toyota', 2),
 ('C789EF', '79', 2020, 'грузовой', 'ModelZ', 'Пикап', 'Ford', 3);
 
--- Вставка данных для таблицы order_
 INSERT INTO order_ (id_order, date_of_receipt, planned_completion, actual_completion, sum_of_cost, comment, client, number, id_master)
 VALUES
 (1, '2024-01-01', '2024-01-10', '2024-01-09', 5000, 'Ремонт двигателя', TRUE, 'A123BC', NULL),

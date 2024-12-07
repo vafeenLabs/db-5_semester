@@ -15,7 +15,6 @@ INSERT INTO car (number, region, year, category, model, body_type, mark, id_pers
 ('B456DE', '456', 2018, 'Внедорожник', 'Nissan X-Trail', 'Кроссовер', 'Nissan', 2),
 ('C789FG', '789', 2020, 'Грузовой', 'Mercedes-Benz Actros', 'Шасси', 'Mercedes-Benz', 3);
 
--- Вставляем заказы с явными датами в текущем месяце
 INSERT INTO order_ (id_order, date_of_receipt, planned_completion, actual_completion, sum_of_cost, comment, client, number, id_master) VALUES
 (1, '2024-12-01', NULL , NULL ,5000 ,NULL ,TRUE ,'A123BC' ,1), -- Ремонт в текущем месяце
 (2,'2024-12-05' ,NULL ,NULL ,3000 ,NULL ,FALSE ,'B456DE' ,2), -- Ремонт в текущем месяце

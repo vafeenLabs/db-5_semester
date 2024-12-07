@@ -16,7 +16,6 @@ INSERT INTO car (number, region, year, category, model, body_type, mark, id_pers
 ('B456CD', '78', '2021', 'Легковой', 'Corolla', 'Хэтчбек', 'Toyota', 2),
 ('C789DE', '79', '2015', 'Грузовой', 'Actros', 'Фургон', 'Mercedes', 3);
 
--- Вставляем заказы с корректными номерами автомобилей и мастерами
 INSERT INTO order_ (id_order, date_of_receipt, planned_completion, actual_completion, sum_of_cost, comment, client, number, id_master) VALUES
 (1, '2024-12-01', NULL , NULL ,5000 ,NULL ,TRUE ,'A123BC' ,1), -- Заказ для мастера 1
 (2,'2024-12-05' ,NULL ,NULL ,3000 ,NULL ,FALSE ,'B456CD' ,1), -- Заказ для мастера 1

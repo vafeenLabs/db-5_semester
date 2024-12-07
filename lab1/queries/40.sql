@@ -7,7 +7,6 @@ VALUES
 (2, 'Петр', 'Петров', 'Петрович', '23456789012'),
 (3, 'Сергей', 'Сергеев', 'Сергеевич', '34567890123');
 
--- Вставка данных для таблицы master
 INSERT INTO master (id_master, date_of_birth, specialization, experience, work_rate, id_person)
 VALUES
 (1, '1985-01-01', 'Автослесарь', 10, 4.5, 1),

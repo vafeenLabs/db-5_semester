@@ -1,33 +1,6 @@
--- Удаление таблиц с внешними ключами в обратном порядке их создания
-DROP TABLE IF EXISTS order_work CASCADE;
-
-DROP TABLE IF EXISTS order_of_spare_part CASCADE;
-
-DROP TABLE IF EXISTS order_malfunction CASCADE;
-
-DROP TABLE IF EXISTS order_ CASCADE;
-
-DROP TABLE IF EXISTS master CASCADE;
-
-DROP TABLE IF EXISTS car CASCADE;
-
-DROP TABLE IF EXISTS provider CASCADE;
-
-DROP TABLE IF EXISTS spare_part CASCADE;
-
-DROP TABLE IF EXISTS malfunction CASCADE;
-
-DROP TABLE IF EXISTS work CASCADE;
-
-DROP TABLE IF EXISTS person CASCADE;
-
-
-
-
-
-
 CREATE TABLE IF NOT EXISTS person (
-    id_person INTEGER PRIMARY KEY,
+    id_person INTEGER -- SERIAL
+    PRIMARY KEY,
     name TEXT NOT NULL,
     surname TEXT NOT NULL,
     patronymic TEXT,
@@ -74,7 +47,6 @@ CREATE TABLE IF NOT EXISTS car (
     mark TEXT NOT NULL,
     id_person INTEGER REFERENCES person(id_person)
 );
-
 
 CREATE TABLE IF NOT EXISTS master (
     id_master INTEGER PRIMARY KEY,

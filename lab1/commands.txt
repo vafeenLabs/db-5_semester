@@ -1,7 +1,12 @@
 старт: sudo systemctl start postgresql
 
 инициализация бд - initdb -D $(pwd)
+
+-- terminal 
 запуск сервера - postgres -D $(pwd)
 подключение к бд psql -d postgres
+
+-- GUI
+запуск приложения 
 
 password 123

@@ -1,5 +1,3 @@
--- Очистка таблиц данных в обратном порядке их создания
-
 DELETE FROM order_work;
 DELETE FROM order_of_spare_part;
 DELETE FROM order_malfunction;

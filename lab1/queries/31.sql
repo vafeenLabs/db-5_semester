@@ -1,27 +1,5 @@
 -- Таск: Запрос 31: Выбрать номер автомобиля, которому каждый раз делают замену одной и той же запчасти.
 
-INSERT INTO car (number, region, year, category, model, body_type, mark, id_person) VALUES
-('A123BC', '77', 2020, 'Седан', 'Toyota', 'Универсал', 'Toyota', NULL),
-('C789EF', '79', 2018, 'Хэтчбек', 'Ford', 'Хэтчбек', 'Ford', NULL),
-('B456DE', '78', 2021, 'Кроссовер', 'Kona', 'Кроссовер', 'Hyundai', NULL);
-
-INSERT INTO order_ (id_order, number, date_of_receipt) VALUES
-(1, 'A123BC', '2023-01-15'),
-(2, 'A123BC', '2023-03-20'),
-(3, 'C789EF', '2023-06-10'),
-(4, 'C789EF', '2023-09-05');
-
-INSERT INTO spare_part (code, name_spare_part, category) VALUES
-(101, 'Фильтр масляный', 'Двигатель'),
-(102, 'Свечи зажигания', 'Двигатель'),
-(103, 'Тормозные колодки', 'Тормоза');
-
-INSERT INTO order_of_spare_part (id_order, code) VALUES
-(1, 101), -- A123BC
-(2, 101), -- A123BC
-(3, 101), -- C789EF
-(4, 102); -- C789EF
-
 SELECT
     o.number,
     sp.code,

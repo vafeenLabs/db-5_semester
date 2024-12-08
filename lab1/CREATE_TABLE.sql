@@ -66,7 +66,8 @@ CREATE TABLE IF NOT EXISTS order_ (
     comment TEXT,
     client BOOL,
     number VARCHAR(6) REFERENCES car(number),
-    id_master INTEGER REFERENCES master(id_master)
+    id_master INTEGER REFERENCES master(id_master),
+    id_provider INTEGER REFERENCES provider(id_provider)
 );
 
 CREATE TABLE IF NOT EXISTS order_malfunction (

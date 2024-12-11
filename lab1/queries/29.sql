@@ -12,3 +12,5 @@ FROM
     LEFT JOIN spare_part sp ON op.code = sp.code
 GROUP BY
     c.number;
+
+-- STRING_AGG(sp.name_spare_part, ', ') — объединяет все названия запчастей в одну строку, разделяя их запятыми и пробелами.

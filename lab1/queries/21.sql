@@ -18,3 +18,8 @@ GROUP BY
     p.name,
     p.patronymic,
     c.number;
+
+-- EXTRACT(YEAR FROM CURRENT_DATE) используется для извлечения года из текущей даты.
+-- CURRENT_DATE — возвращает текущую дату (системную) без времени.
+-- Например: 2024-12-11.
+-- EXTRACT(YEAR FROM ...) — извлекает только год из указанной даты

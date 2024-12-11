@@ -10,3 +10,5 @@ JOIN
     person p ON m.id_person = p.id_person
 WHERE
     m.work_rate < 0.7;
+
+--  UPPER(p.surname) — Преобразует фамилию (surname) в верхний регистр.

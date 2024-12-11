@@ -16,3 +16,5 @@ ORDER BY
     p.id_provider,
     category_name;
 
+
+-- Функция COALESCE используется для замены значений NULL на заданное значение.

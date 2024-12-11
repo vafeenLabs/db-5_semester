@@ -22,3 +22,6 @@ GROUP BY
     TO_CHAR(date_of_receipt, 'Month')
 ORDER BY
     TO_CHAR(date_of_receipt, 'Month');
+
+-- TO_CHAR(date_of_receipt, 'Month'): Преобразует дату в текстовый формат, извлекая из нее название месяца.
+-- 'Month': Формат, указывающий, что нужно вывести полное название месяца.

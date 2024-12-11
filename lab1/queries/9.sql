@@ -6,3 +6,5 @@ WHERE comment LIKE '%/%'
    OR comment LIKE '%-%'
    OR comment LIKE '%\\%'
    OR comment LIKE '%\%%';
+
+   -- %/% означает, что поле number должно содержать символ / в любом месте:

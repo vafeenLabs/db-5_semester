@@ -5,10 +5,12 @@ SELECT
     sp.category
 FROM
     provider p
-    CROSS JOIN spare_part sp
+    CROSS JOIN spare_part sp -- Соединяем всех поставщиков с запчастями
     LEFT JOIN order_of_spare_part op ON sp.code = op.code
+    LEFT JOIN "order_" o ON op.id_order = o.id_order
 WHERE
-    op.id_order IS NULL;
+    o.id_provider != p.id_provider OR o.id_provider IS NULL;
+
 
 -- CROSS
 -- В данном запросе: Все записи из таблицы provider (поставщики) 

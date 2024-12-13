@@ -23,4 +23,3 @@ HAVING
         WHERE
             sub_o.number = o.number
     )
-    AND COUNT(op.id_order) > 1;

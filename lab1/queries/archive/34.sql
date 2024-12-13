@@ -8,13 +8,18 @@ SELECT
     COUNT(DISTINCT sp.code) AS parts_count
 FROM
     provider p
-    LEFT JOIN spare_part sp ON p.id_provider = sp.id_provider
+    LEFT JOIN spare_part sp ON TRUE  -- Соединяем всех поставщиков с запчастями
+    LEFT JOIN order_of_spare_part op ON sp.code = op.code  -- Связываем с заказами
+    LEFT JOIN "order_" o ON op.id_order = o.id_order  -- Связываем с таблицей заказов
+WHERE
+    o.id_provider = p.id_provider OR o.id_provider IS NULL  -- Поставщик связан с заказом
 GROUP BY
     p.name_provider,
-    category_name
+    sp.category
 ORDER BY
     p.id_provider,
     category_name;
+
 
 
 -- Функция COALESCE используется для замены значений NULL на заданное значение.

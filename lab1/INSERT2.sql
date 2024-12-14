@@ -1,3 +1,4 @@
+-- Добавляем поставщиков
 INSERT INTO provider (id_provider, name_provider, adress, name_manager, surname_manager, patronymic_manager, phone_manager)
 VALUES
 (1, 'Поставщик 1', 'Москва, ул. Ленина, 1', 'Иван', 'Иванов', 'Иванович', '89160000001'),
@@ -6,6 +7,7 @@ VALUES
 (4, 'Поставщик 4', 'Казань, ул. Гайдара, 4', 'Сергей', 'Сергеев', 'Сергеевич', '89160000004'),
 (5, 'Поставщик 5', 'Екатеринбург, ул. Маяковского, 5', 'Дмитрий', 'Дмитриев', 'Дмитриевич', '89160000005');
 
+-- Добавляем пользователей
 INSERT INTO person (id_person, name, surname, patronymic, phone) VALUES
 (1, 'Иван', 'Иванов', 'Иванович', '89012345678'),
 (2, 'Анна', 'Смирнова', 'Владимировна', '89098765432'),
@@ -13,6 +15,7 @@ INSERT INTO person (id_person, name, surname, patronymic, phone) VALUES
 (4, 'Мария', 'Петрова', 'Сергеевна', '89011223344'),
 (5, 'Дмитрий', 'Сидоров', 'Викторович', '89998887766');
 
+-- Добавляем мастеров
 INSERT INTO master (id_master, date_of_birth, specialization, experience, work_rate, id_person)
 VALUES
 (1, to_date('1980-01-15', 'YYYY-MM-DD'), 'Автомеханик', 10, 1.5, 1), -- Связь с person с id 1
@@ -27,7 +30,9 @@ INSERT INTO car (number, region, year, category, model, body_type, mark, id_pers
 ('B456DE', '78', 2021, 'Crossover', 'Kona', 'Crossover', 'Hyundai', 2),
 ('C789EF', '79', 2018, 'Hatchback', 'Focus', 'Hatchback', 'Ford', 3),
 ('D987JK', '70', 2022, 'Sedan', 'Accord', 'Luxury', 'Honda', 4),
-('E321HJ', '71', 2021, 'Pickup', 'F-150', 'Pickup', 'Ford', 5);
+('E321HJ', '71', 2021, 'Pickup', 'F-150', 'Pickup', 'Ford', 5),
+('F123GH', '77', 2020, 'Sedan', 'Corolla', 'Sedan', 'Toyota', 1),  -- Второй автомобиль владельца с id_person = 1
+('G456HI', '78', 2021, 'Crossover', 'Kona', 'Crossover', 'Hyundai', 2);  -- Второй автомобиль владельца с id_person = 2
 
 -- Добавляем заказы
 INSERT INTO order_ (id_order, date_of_receipt, planned_completion, actual_completion, sum_of_cost, comment, client, number, id_master, id_provider) VALUES
@@ -35,7 +40,13 @@ INSERT INTO order_ (id_order, date_of_receipt, planned_completion, actual_comple
 (2, '2024-11-10', '2024-11-15', '2024-11-14', 25000, 'Техобслуживание', TRUE, 'B456DE', 2, 3),
 (3, '2024-12-01', '2024-12-05', NULL, NULL, 'Замена тормозов', TRUE, 'C789EF', 3, 1),
 (4, '2024-12-05', '2024-12-10', NULL, NULL, 'Ремонт подвески', TRUE, 'D987JK', 4, 2),
-(5, '2024-12-07', '2024-12-12', NULL, NULL, 'Замена тормозных колодок', TRUE, 'E321HJ', 5, 3);
+(5, '2024-12-07', '2024-12-12', NULL, NULL, 'Замена тормозных колодок', TRUE, 'E321HJ', 5, 3),
+(6, '2024-12-10', '2024-12-12', '2024-12-11', 18000, 'Ремонт двигателя', TRUE, 'A123BC', 1, 1), -- Машина A123BC, Toyota Corolla
+(7, '2024-12-15', '2024-12-20', '2024-12-19', 22000, 'Ремонт подвески', TRUE, 'A123BC', 2, 2), -- Машина A123BC, Toyota Corolla
+(8, '2024-12-20', '2024-12-22', '2024-12-21', 15000, 'Замена масла', TRUE, 'B456DE', 3, 1), -- Машина B456DE, Hyundai Kona
+(9, '2024-12-22', '2024-12-25', '2024-12-24', 20000, 'Техобслуживание', TRUE, 'B456DE', 4, 2), -- Машина B456DE, Hyundai Kona
+(10, '2024-12-18', '2024-12-22', '2024-12-21', 20000, 'Замена тормозов', TRUE, 'C789EF', 1, 1), -- Машина C789EF, Ford Focus
+(11, '2024-12-25', '2024-12-28', '2024-12-27', 23000, 'Ремонт подвески', TRUE, 'C789EF', 3, 2); -- Машина C789EF, Ford Focus
 
 -- Добавляем запчасти
 INSERT INTO spare_part (code, name_spare_part, additional_features, quantity, units_of_measurement, cost, category) VALUES

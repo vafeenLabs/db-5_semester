@@ -1,12 +1,17 @@
-# folder ./code
+# Folder: ./code
 
-1-75 labs on subject Databases on the site https://sql-ex.ru/exercises/index.php?act=learn 
+**Labs 1-75 on the subject of Databases**  
+Available on the website: [https://sql-ex.ru/exercises/index.php?act=learn](https://sql-ex.ru/exercises/index.php?act=learn)  
 
-database management system: ORACLE
+**Database Management System:** ORACLE  
 
-# folder ./lab1 
+---
 
-Спроектировать БД автосервиса «Автокомплект». (Подробнее [./lab1/Task.md](./lab1/Task.md))
+# Folder: ./lab1  
 
-./lab1/queries - Запросы
-./lab1/server - Сервер postgresql, к которому можно локально подключиться
+**Design a database for the "Автокомплект" car service.**  
+(Details available in [./lab1/Task.md](./lab1/Task.md))  
+
+## Subfolders:  
+- **./lab1/queries** - SQL queries for server
+- **./lab1/server** - PostgreSQL server for local connection  

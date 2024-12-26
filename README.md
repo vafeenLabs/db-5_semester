@@ -1,4 +1,6 @@
-# Folder: ./code
+# Базы данных 4 и 5 семестр
+
+## Folder: ./code
 
 **Labs 1-75 on the subject of Databases**  
 Available on the website: [https://sql-ex.ru/exercises/index.php?act=learn](https://sql-ex.ru/exercises/index.php?act=learn)  
@@ -7,7 +9,7 @@ Available on the website: [https://sql-ex.ru/exercises/index.php?act=learn](http
 
 ---
 
-# Folder: ./lab1  
+## Folder: ./lab1  
 
 **Design a database for the "Автокомплект" car service.**  
 (Details available in [./lab1/Task.md](./lab1/Task.md))  
